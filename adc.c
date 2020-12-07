@@ -120,7 +120,7 @@ uint16_t ui16_adc_read_phase_B_current(void) {
 uint8_t ui8_adc_read_throttle(void) {
     // 0x53E0 + 2*4 = 0x53E8
     //  return *(uint8_t*)(0x53E8);
-    return *(uint8_t*) (0x53E8);
+    return (*(uint8_t*) (0x53E8)) - SEMPU_T2_THROTTLE_OFFSET;
 }
 
 uint16_t ui16_adc_read_x4_value(void) {
