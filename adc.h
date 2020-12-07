@@ -16,6 +16,7 @@
 #define ADC1_CHANNEL_MOTOR_TOTAL_CURRENT_FILTERED	ADC1_CHANNEL_8
 #define ADC1_CHANNEL_BATTERY_VOLTAGE			ADC1_CHANNEL_9
 #define ADC1_CHANNEL_THROTTLE				ADC1_CHANNEL_4
+#define SEMPU_T2_THROTTLE_OFFSET 21
 
 extern uint8_t adc_throttle_busy_flag;
 extern uint8_t ui8_BatteryCurrent;
