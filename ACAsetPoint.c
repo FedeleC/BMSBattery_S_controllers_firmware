@@ -326,7 +326,7 @@ uint16_t aca_setpoint(uint16_t ui16_time_ticks_between_pas_interrupt, uint16_t s
 		if ((ui16_aca_experimental_flags & PWM_AUTO_OFF) == PWM_AUTO_OFF) {
 			controll_state_temp += 512;
 			//disable PWM if enabled and no power is wanted
-			if (uint_PWM_Enable && ui32_erps_filtered == 0 && uint32_current_target == ui16_current_cal_b) {
+			if (uint_PWM_Enable && ui32_erps_filtered == 0 && uint32_current_target == ui16_current_cal_b && (ui16_BatteryCurrent - ui16_current_cal_b) < 3)  {
 				TIM1_CtrlPWMOutputs(DISABLE);
 				uint_PWM_Enable = 0;
 			}
